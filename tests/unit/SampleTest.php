@@ -6,6 +6,7 @@
 	{
 		public function testTrueAssertsToTrue()
 		{
+			// built in function assert true
 			$this->assertTrue(true);
 		}		
 	}
