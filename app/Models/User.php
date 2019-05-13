@@ -12,7 +12,7 @@ class User
 	public function setFirstName($userFirstName)
 	{
 		//overrite the firstname property to the value passed in to this setFirstName function
-		$this->first_name = $userFirstName;
+		$this->first_name = trim($userFirstName);
 	}
 
 	public function getFirstName()
@@ -22,7 +22,7 @@ class User
 
 	public function setLastName($userLastName)
 	{
-		$this->last_name = $userLastName;
+		$this->last_name = trim($userLastName);
 	}
 
 	public function getLastName()
@@ -33,7 +33,7 @@ class User
 	public function getFullName()
 	{
 		// return properties
-		return $this->first_name." ".$this->last_name;
+		return "$this->first_name $this->last_name";
 	}
 }
 
