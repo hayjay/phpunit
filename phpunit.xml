@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- declare whatever you want the application to run before the test runs here in the bootstrap attribute -->
+
+<!-- the color attribute adds colors to command line -->
+<!-- if you turn verbose attribute to false, you ted to get less information about php unit
+ -->
+ 
+<phpunit bootstrap="vendor/autoload.php"
+	colors="true"
+	verbose="true"
+	stopOnFailure="false">
+	<testsuites>
+		<testsuite name="Test suite">
+			<!-- defines the directory we are running the file from -->
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

@@ -1,0 +1,8 @@
+{
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    },
+    "autoload" : {
+    	"App\\" : "app"
+    }
+}
