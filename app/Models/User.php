@@ -46,6 +46,15 @@ class User
 	{
 		return $this->email;
 	}
+
+	//basically, returns an array with the user full name and email
+	public function getEmailVariables()
+	{
+		return [
+			'full_name' => $this->getFullName(),
+			'email' => $this->getEmail()
+		];
+	}
 }
 
 ?>
