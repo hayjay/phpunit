@@ -49,5 +49,34 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals($user->getFirstName(), 'Nurudeen');
 		$this->assertEquals($user->getLastName(), 'Ajayi');
 	}
+
+	public function testEmailAddressCanBeSet()
+	{
+		$email = 'ajayinurudeen998@gmail.com';
+		$user = new User;
+		$user->setEmail($email);
+
+		$this->assertEquals($user->getEmail(), $email);
+	}
+
+	public function testEmailVariableContainCorrectValues()
+	{
+		$user = new User;
+		$user->setFirstName('Nurudeen');
+		$user->setLastName('Ajayi');
+		$user->setEmail('ajayinurudeen998@gmail.com');
+
+		$emailVariables = $user->getEmailVariables();
+
+		//checks if full_name key exists in the $emailVariables array to be declared in the getEmailVariables function
+		$this->assertArrayHasKey('full_name', $emailVariables);
+		//checks if email key exist in email variables array which is what we expect
+		$this->assertArrayHasKey('email', $emailVariables);
+
+		//expecting the first assertArrayHasKey to return Nurudeen Ajayi
+		$this->assertEquals($emailVariables['full_name'], 'Nurudeen Ajayi');
+		//expecting the first assertArrayHasKey to return ajayinurudeen998@gmail.com
+		$this->assertEquals($emailVariables['email'], 'ajayinurudeen998@gmail.com');
+	}
 }
  ?>
