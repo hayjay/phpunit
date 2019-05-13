@@ -27,9 +27,16 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals($user->getLastName(), 'Ajayi');
 	}
 
-	public function testFullNameIsReturned($value='')
+	public function testFullNameIsReturned()
 	{
-		# code...
+		$user = new User();
+
+		$user->setFirstname('Nurudeen');
+
+		$user->setLastName('Ajayi');
+
+		//assert equals is what you use most when u r writing test
+		$this->assertEquals($user->getFullName(), 'Nurudeen Ajayi');
 	}
 }
  ?>
