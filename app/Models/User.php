@@ -32,6 +32,7 @@ class User
 
 	public function getFullName()
 	{
+		// return properties
 		return $this->first_name." ".$this->last_name;
 	}
 }

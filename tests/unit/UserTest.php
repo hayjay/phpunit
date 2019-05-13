@@ -36,6 +36,7 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		$user->setLastName('Ajayi');
 
 		//assert equals is what you use most when u r writing test
+		//make my name as a sample case
 		$this->assertEquals($user->getFullName(), 'Nurudeen Ajayi');
 	}
 }
