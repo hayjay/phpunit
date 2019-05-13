@@ -5,6 +5,7 @@ namespace App\Models;
  */
 class User
 {
+
 	public $first_name;
 	public $last_name;
 	public $email;
@@ -50,6 +51,7 @@ class User
 	//basically, returns an array with the user full name and email
 	public function getEmailVariables()
 	{
+		//make sure return values has full_name keys and email keys
 		return [
 			'full_name' => $this->getFullName(),
 			'email' => $this->getEmail()
