@@ -10,10 +10,10 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		//istantiate the User model
 		$user = new \App\Models\User;
 
-		$user->setFirstName('Billy');
+		$user->setFirstName('Ajayi Nurudeen');
 
 		//calling the assert equals function which takes two params here first is the function we expect the result from and the second parameter is the test case which we expect
-		$this->assertEquals($user->getFirstName(), 'Billy');
+		$this->assertEquals($user->getFirstName(), 'Ajayi Nurudeen');
 	}
 }
  ?>
