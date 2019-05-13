@@ -5,8 +5,8 @@ namespace App\Models;
  */
 class User
 {
-
 	public $first_name;
+	public $last_name;
 
 	//this function creates/set user firstname
 	public function setFirstName($userFirstName)
@@ -18,6 +18,16 @@ class User
 	public function getFirstName()
 	{
 		return $this->first_name;
+	}
+
+	public function setLastName($userLastName)
+	{
+		$this->last_name = $userLastName;
+	}
+
+	public function getLastName()
+	{
+		return $this->last_name;
 	}
 }
 
