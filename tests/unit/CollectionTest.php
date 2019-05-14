@@ -101,6 +101,8 @@
 				['username' => 'hayjay'],
 				['username' => 'nurudeen'],
 			]);
+
+			$this->assertIsString('string', $collection->toJson());
 			//assert an array of json output two objects
 			$this->assertEquals('[{"username":"hayjay"},{"username":"nurudeen"}]', $collection->toJson());
 		}
