@@ -9,6 +9,8 @@ class UserTest extends \PHPUnit\Framework\TestCase
 	protected $user;
 
 	//runs everytime php unit wants to run our test or runs before any time php unit wants to run our test
+
+	//this setUp function helps avoid instantiation of the User model in every class
 	public function setUp(): void
 	{
 		$this->user = new User;
@@ -82,11 +84,10 @@ class UserTest extends \PHPUnit\Framework\TestCase
 	public function testThatWeCanGetOtherName()
 	{
 		// $this->user->
-		$user = new User;
 
-		$user->setOtherName('Olawale');
+		$this->user->setOtherName('Olawale');
 
-		$this->assertEquals($user->getOtherName(), 'Olawale');
+		$this->assertEquals($this->user->getOtherName(), 'Olawale');
 	}
 }
  ?>
