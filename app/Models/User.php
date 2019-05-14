@@ -9,6 +9,7 @@ class User
 	public $first_name;
 	public $last_name;
 	public $email;
+	public $other_name;
 
 	//this function creates/set user firstname
 	public function setFirstName($userFirstName)
@@ -56,6 +57,16 @@ class User
 			'full_name' => $this->getFullName(),
 			'email' => $this->getEmail()
 		];
+	}
+
+	public function setOtherName($userOtherName)
+	{
+		$this->other_name = $userOtherName;
+	}
+
+	public function getOtherName()
+	{
+		return $this->other_name;
 	}
 }
 

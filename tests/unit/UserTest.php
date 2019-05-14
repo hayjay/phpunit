@@ -8,7 +8,7 @@ class UserTest extends \PHPUnit\Framework\TestCase
 {
 	protected $user;
 
-	//runs everytime php unit wants to run a function 
+	//runs everytime php unit wants to run our test or runs before any time php unit wants to run our test
 	public function setUp(): void
 	{
 		$this->user = new User;
@@ -77,6 +77,16 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals($emailVariables['full_name'], 'Nurudeen Ajayi');
 		//expecting the first assertArrayHasKey to return ajayinurudeen998@gmail.com
 		$this->assertEquals($emailVariables['email'], 'ajayinurudeen998@gmail.com');
+	}
+
+	public function testThatWeCanGetOtherName()
+	{
+		// $this->user->
+		$user = new User;
+
+		$user->setOtherName('Olawale');
+
+		$this->assertEquals($user->getOtherName(), 'Olawale');
 	}
 }
  ?>
