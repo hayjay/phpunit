@@ -106,5 +106,19 @@
 			//assert an array of json output two objects
 			$this->assertEquals('[{"username":"hayjay"},{"username":"nurudeen"}]', $collection->toJson());
 		}
+
+		/** @test */
+		public function jsonEncodeACollectionObjectReturnsJson()
+		{
+			$collection = new \App\Support\Collection([
+				['username' => 'hayjay'],
+				['username' => 'nurudeen'],
+			]);
+
+			$encoded = json_encode($collection);
+
+			$this->assertIsString('string', $encoded);
+			$this->assertEquals('[{"username":"hayjay"},{"username":"nurudeen"}]', $encoded);
+		}
 	}
  ?>
