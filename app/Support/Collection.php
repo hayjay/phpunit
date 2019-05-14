@@ -44,8 +44,13 @@ class Collection implements \IteratorAggregate {
 	//pass collection parameter because we always expect a collection to be passed in to this function
 	public function merge(Collection $collection)
 	{
-		// return $this->add($collection->get());
-		return new Collection(array_merge($this->get(), $collection->get()));
+		return $this->add($collection->get());
+		// return new Collection(array_merge($this->get(), $collection->get()));
+	}
+
+	public function toJson()
+	{
+		return json_encode($this->items);
 	}
 }
  ?>

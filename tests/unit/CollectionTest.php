@@ -78,7 +78,10 @@
 			$newCollection = $collection1->merge($collection2);
 
 			//finally check if the merged collection length is upto 6
-			$this->assertEquals(6, $newCollection->count());
+			$this->assertEquals(6, $collection1->count());
+
+			$this->assertCount(6, $collection1->get());
+
 		}
 
 
@@ -89,6 +92,17 @@
 			$collection->add(['three']);
 
 			$this->assertCount(3, $collection->get());
+		}
+
+		/** @test */
+		public function returnsJsonEncodedItems()
+		{
+			$collection = new \App\Support\Collection([
+				['username' => 'hayjay'],
+				['username' => 'nurudeen'],
+			]);
+			//assert an array of json output two objects
+			$this->assertEquals('[{"username":"hayjay"},{"username":"nurudeen"}]', $collection->toJson());
 		}
 	}
  ?>
