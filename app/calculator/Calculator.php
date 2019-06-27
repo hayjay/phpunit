@@ -39,6 +39,19 @@ class Calculator
 
     public function calculate()
     {
+        if(count($this->operations) > 1){
+            // $result = null;
+
+            // foreach($this->operations as $operation){
+            //     $result[] = $operation->calculate();
+            // }
+
+            // return $result;
+
+            return array_map(function($each_operation){
+                return $each_operation->calculate(); //returns an array of all of the results
+            }, $this->operations);
+        }
         return $this->operations[0]->calculate();
     }
 

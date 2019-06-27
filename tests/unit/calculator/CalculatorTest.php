@@ -56,7 +56,6 @@
         }
 
         /** @test */
-
         public function calculate_method_returns_multiple_results()
         {
             $addition = new \App\Calculator\Addition;
@@ -69,11 +68,11 @@
             $calculator->setOperations([$addition, $division]);
 
             //make sure this test returns an array because we passed in multiple operations
-            $this->assertInternalType('array', $calculator->calculate());
+            $this->assertIsArray($calculator->calculate());
             //check if the first result returns addition
-            $this->assetEquals(10, $calculator->calculate()[0]);
+            $this->assertEquals(10, $calculator->calculate()[0]);
             //check if the first result returns divistion of the expected output (25)
-            $this->assetEquals(25, $calculator->calculate()[1]);
+            $this->assertEquals(25, $calculator->calculate()[1]);
         }
 	}
 ?>
