@@ -67,6 +67,13 @@
 
             $calculator = new \App\Calculator\Calculator;
             $calculator->setOperations([$addition, $division]);
+
+            //make sure this test returns an array because we passed in multiple operations
+            $this->assertInternalType('array', $calculator->calculate());
+            //check if the first result returns addition
+            $this->assetEquals(10, $calculator->calculate()[0]);
+            //check if the first result returns divistion of the expected output (25)
+            $this->assetEquals(25, $calculator->calculate()[1]);
         }
 	}
 ?>
