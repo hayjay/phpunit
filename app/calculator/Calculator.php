@@ -54,5 +54,4 @@ class Calculator
         }
         return $this->operations[0]->calculate();
     }
-
 }
